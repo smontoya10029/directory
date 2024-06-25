@@ -14,6 +14,9 @@ import LayoutClient from './layouts/LayoutClient';
 
 //AUTH
 import Login from './pageauth/Login';
+import Register from './pageauth/Register';
+import PanelAdmin from './pageadmin/PanelAdmin';
+import PanelClient from './pageclient/PanelClient';
 
 const App = () => {
   return (
@@ -23,16 +26,17 @@ const App = () => {
             <Route path="/" element={<LayoutPublic/>}>
                 <Route index element={<PageHome/>} />
                 <Route path='/Login' element={<Login/>}/>
+                <Route path='/register' element={<Register/>}/>
             </Route>
 
             <Route element={<ProtectedRoutes/>}>
 
                 <Route path="/admin" element={<LayoutAdmin/>}>
-                    <Route index element={<PageHome/>} />
+                    <Route index element={<PanelAdmin/>} />
                 </Route>
 
                 <Route path="/client" element={<LayoutClient/>}>
-                    <Route index element={<PageHome/>} />
+                    <Route index element={<PanelClient/>} />
                 </Route>
 
             </Route>

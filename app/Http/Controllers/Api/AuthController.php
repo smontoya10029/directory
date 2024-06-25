@@ -59,6 +59,7 @@ class AuthController extends Controller
             $user->hasRole('client'); //add rol
             $response['token'] = $user->createToken("code.app")->plainTextToken;
             $response['user'] = $user;
+            $response['message'] = 'Logueado';
             $response['success'] = true;
 
         }
